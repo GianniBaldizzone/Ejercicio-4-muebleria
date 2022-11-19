@@ -17,8 +17,17 @@ public class Main {
         TicketDeVenta ticket = new TicketDeVenta("03-06-2022",
                 "Efectivo");
         ticket.agregarProductos(televisor);
-        ticket.agregarProductos(televisor);
-        ticket.agregarProductos(televisor);
+        ticket.agregarProductos(silla);
+        ticket.agregarProductos(ventilador);
         ticket.fijarPrecio(ticket.getValorDeVenta());
+        ticket.generarTicket();
+
+        TicketDeReserva ticketReserva = new TicketDeReserva("03-06-2022",
+                "Efectivo","03-07-2022");
+        ticketReserva.agregarProductosReservados(televisor);
+        ticketReserva.agregarProductosReservados(silla);
+        ticketReserva.agregarProductosReservados(cama);
+        ticketReserva.fijarPrecioReserva(ticketReserva.getValorDeReserva());
+        ticketReserva.generarTicketReserva();
     }
 }

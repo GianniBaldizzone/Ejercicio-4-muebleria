@@ -1,5 +1,6 @@
 import java.util.Date;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class TicketDeVenta {
 private String fechaDeCompra;
@@ -57,7 +58,22 @@ public void agregarProductos(Muebles objetosComprados){
         for(int i=0;i<objetosComprados.size();i++){
             valorDeVenta = valorDeVenta + objetosComprados.get(i).getPrecio();
         }
+        this.valorDeVenta = valorDeVenta;
         System.out.println("su precio ha sido fijado :"+ valorDeVenta);
 
+    }
+    public void generarTicket(){
+    JOptionPane.showMessageDialog(null,"La venta ha finalizado" +
+            "\n*** Resumen ***"+
+            "\nFecha de compra: "+this.getFechaDeCompra()+
+            "\nValor de venta: "+this.getValorDeVenta()+
+            "\nMetodo de pago: "+this.getMetodoDePago()
+
+    );
+        System.out.println("La venta ha finalizado" +
+                "\n*** Resumen ***"+
+                "\nFecha de compra: "+this.getFechaDeCompra()+
+                "\nValor de venta: "+this.getValorDeVenta()+
+                "\nMetodo de pago: "+this.getMetodoDePago());
     }
 }
