@@ -5,7 +5,7 @@ import java.util.Date;
 public class TicketDeReserva {
     private String fechaDeReserva;
     private String fechaDeExpiracion;
-    private ArrayList objetosReservados;
+    private ArrayList<Muebles> objetosReservados;
     private double valorDeReserva;
     private String metodoDePago;
 
@@ -58,6 +58,7 @@ public class TicketDeReserva {
     }
     public void agregarProductosReservados(Muebles objetosReservados){
         getObjetosReservados().add(objetosReservados);
+        objetosReservados.setReserva(this);
         System.out.println("su objeto fue agregado a la reserva");
     }
     public void removerProductosReservados(Muebles objetosReservados){
